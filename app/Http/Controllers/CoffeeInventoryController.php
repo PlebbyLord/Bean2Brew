@@ -15,6 +15,11 @@ class CoffeeInventoryController extends Controller
         return view('Features.coffeeinventory');
     }
 
+    public function redirectTo($request)
+    {
+        return route('login');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
