@@ -22,7 +22,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::middleware(['auth'])->group(function () {
-    Route::get('/farmschedule', [FarmScheduleController::class, 'index'])->name('farmschedule');
+    Route::get('/farmschedule', [App\Http\Controllers\FarmScheduleController::class, 'index'])->name('farmschedule');
     Route::get('/coffeeinventory', [App\Http\Controllers\CoffeeInventoryController::class, 'index'])->name('coffeeinventory');
     Route::get('/growcoffee', [App\Http\Controllers\GrowCoffeeController::class, 'index'])->name('growcoffee');
     Route::get('/locationmapping', [App\Http\Controllers\LocationMappingController::class, 'index'])->name('locationmapping');
