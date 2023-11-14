@@ -28,19 +28,19 @@
                     @auth
                     <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{ __('Schedule') }}</a>                                                                            
+                        <a class="nav-link" href="{{ route('farmschedule') }}">{{ __('Schedule') }}</a>                                                                            
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{ __('Inventory') }}</a>    
+                        <a class="nav-link" href="{{ route('coffeeinventory') }}">{{ __('Inventory') }}</a>    
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{ __('Locations') }}</a>
+                        <a class="nav-link" href="{{ route('locationmapping') }}">{{ __('Locations') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{ __('Species Indentifier') }}</a>
+                        <a class="nav-link" href="{{ route('speciesidentifier') }}">{{ __('Species Indentifier') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{ __('Grow Coffee') }}</a>
+                        <a class="nav-link" href="{{ route('growcoffee') }}">{{ __('Grow Coffee') }}</a>
                     </li>
                     </ul>
                     @endauth
@@ -68,11 +68,11 @@
                             </li>
                         
                             <li class="nav-item">
-                                <a class="nav-link" href="#">{{ __('Ratings') }}</a>
+                                <a class="nav-link" href="{{ route('ratings') }}">{{ __('Ratings') }}</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#">{{ __('Buy/Sell') }}</a>
+                                <a class="nav-link" href="{{ route('shopping') }}">{{ __('Buy/Sell') }}</a>
                             </li>
 
                             <li class="nav-item dropdown">
@@ -81,10 +81,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Profile') }}
+                                    <a class="dropdown-item" href="{{ route('profile') }}">
+                                    {{ __('Profile') }}
+                                    </a> 
                                         
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
