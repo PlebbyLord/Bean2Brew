@@ -16,6 +16,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+                <img src="{{ URL('images/Bean-to-Brew.png') }}" alt="Logo" width="50" height="50" >
                 <a class="navbar-brand" href="{{ route('home') }}">
                     Bean to Brew
                 </a>
