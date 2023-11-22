@@ -11,20 +11,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 
-
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
-
     use RegistersUsers;
 
     /**
@@ -74,5 +62,24 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'role' => $data['role'],
         ]);
+    }
+
+    /**
+     * The user has been registered.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  mixed  $user
+     * @return mixed
+     */
+    protected function registered(Request $request, $user)
+    {
+        // Check if the user has the roles "company" or "supplier"
+        if (in_array($user->role, ['company', 'supplier'])) {
+            // Redirect to the verification popup view for "company" and "supplier"
+            return redirect()->route('verification.popup');
+        }
+
+        // Redirect to the desired path for "regular" users (e.g., '/home')
+        return redirect($this->redirectTo);
     }
 }
