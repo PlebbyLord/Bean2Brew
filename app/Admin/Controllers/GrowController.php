@@ -22,7 +22,7 @@ class GrowController extends AdminController
      *
      * @return Grid
      */
-    protected function grid()
+    protected function grid(): grid
     {
         $grid = new Grid(new Grow());
 
@@ -37,7 +37,7 @@ class GrowController extends AdminController
      * @param mixed $id
      * @return Show
      */
-    protected function detail($id)
+    protected function detail($id): show
     {
         $show = new Show(Grow::findOrFail($id));
 
@@ -51,7 +51,7 @@ class GrowController extends AdminController
      *
      * @return Form
      */
-    protected function form()
+    protected function form(): form
     {
         $form = new Form(new Grow());
 

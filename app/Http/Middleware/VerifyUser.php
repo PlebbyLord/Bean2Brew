@@ -25,6 +25,9 @@ class VerifyUser
 
         return $next($request);
 
+        /**
+         * Redirect user to Rerification Popup if not filled up
+         */
         $user = Auth::user();
 
         if ($user && $user->verification_status !== null) {

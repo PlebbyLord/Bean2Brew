@@ -22,7 +22,7 @@ class LocationController extends AdminController
      *
      * @return Grid
      */
-    protected function grid()
+    protected function grid(): grid
     {
         $grid = new Grid(new Location());
 
@@ -37,7 +37,7 @@ class LocationController extends AdminController
      * @param mixed $id
      * @return Show
      */
-    protected function detail($id)
+    protected function detail($id): show
     {
         $show = new Show(Location::findOrFail($id));
 
@@ -51,11 +51,9 @@ class LocationController extends AdminController
      *
      * @return Form
      */
-    protected function form()
+    protected function form(): form
     {
         $form = new Form(new Location());
-
-
 
         return $form;
     }

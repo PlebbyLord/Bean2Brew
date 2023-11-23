@@ -48,17 +48,17 @@ class User extends Authenticatable
         'verification_details' => 'array',
     ];
 
-    public function verify()
+    public function verify(): HasOne
     {
         return $this->hasOne(Verify::class);
     }
 
-    public function verifies()
+    public function verifies(): HasOne
     {
         return $this->hasOne(Verify::class);
     }
 
-    public function status()
+    public function status(): HasOne
     {
         return $this->hasOne(Verify::class, 'verification_status');
     }

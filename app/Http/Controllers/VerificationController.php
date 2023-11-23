@@ -5,15 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Verify;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class VerificationController extends Controller
 {
-    public function showVerificationPopup()
+    /**
+     * Show verification popup
+     */
+    public function showVerificationPopup(): View
     {
         return view('verification.popup');
     }
 
-    public function sendVerificationRequest(Request $request)
+    public function sendVerificationRequest(Request $request): RedirectResponse
     {
         // Validate the request data
         $request->validate([
@@ -60,10 +65,8 @@ class VerificationController extends Controller
         }
     }
 
-    public function verificationRequestSuccess()
+    public function verificationRequestSuccess(): View
 {
     return view('verification.success');
 }
 }
-
-
