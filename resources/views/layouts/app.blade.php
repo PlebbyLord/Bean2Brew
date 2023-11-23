@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -9,7 +9,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    <!-- Scripts -->
+    <!-- Styles -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
@@ -28,23 +28,25 @@
                     <!-- Left Side Of Navbar -->
                     @auth
                     <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('farmschedule') }}">{{ __('Schedule') }}</a>                                                                            
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('coffeeinventory') }}">{{ __('Inventory') }}</a>    
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('locationmapping') }}">{{ __('Locations') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('speciesidentifier') }}">{{ __('Species Indentifier') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('growcoffee') }}">{{ __('Grow Coffee') }}</a>
-                    </li>
-                    </ul>
-                    @endauth
+                        @if (auth()->user()->role !== 'regular')
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('farmschedule') }}">{{ __('Schedule') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('coffeeinventory') }}">{{ __('Inventory') }}</a>
+                                </li>
+                        @endif
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('locationmapping') }}">{{ __('Locations') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('speciesidentifier') }}">{{ __('Species Identifier') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('growcoffee') }}">{{ __('Grow Coffee') }}</a>
+                            </li>
+                            @endauth
+                        </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
@@ -62,12 +64,12 @@
                                 </li>
                             @endif
                         @else
-                             <li class="nav-item">
+                            <li class="nav-item">
                                 <form class="form-inline" onsubmit="return submitForm();">
                                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
                                 </form>
                             </li>
-                        
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('ratings') }}">{{ __('Ratings') }}</a>
                             </li>
@@ -101,15 +103,6 @@
                     </ul>
                 </div>
             </div>
-
-
-            <script>
-                function submitForm() {       
-                    var searchValue = document.getElementById('searchInput').value;                  
-                    console.log('Search Value:', searchValue);                   
-                    return false;
-                }
-            </script>
         </nav>
 
         <main class="py-4">

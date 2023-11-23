@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\GrowCoffee;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class GrowCoffeeController extends Controller
@@ -10,7 +11,7 @@ class GrowCoffeeController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
         return view('Features.growcoffee');
     }
@@ -18,7 +19,7 @@ class GrowCoffeeController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): void
     {
         //
     }
@@ -26,7 +27,7 @@ class GrowCoffeeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): void
     {
         //
     }
@@ -34,7 +35,7 @@ class GrowCoffeeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(GrowCoffee $growCoffee)
+    public function show(GrowCoffee $growCoffee): void
     {
         //
     }
@@ -42,7 +43,7 @@ class GrowCoffeeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(GrowCoffee $growCoffee)
+    public function edit(GrowCoffee $growCoffee): void
     {
         //
     }
@@ -50,7 +51,7 @@ class GrowCoffeeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, GrowCoffee $growCoffee)
+    public function update(Request $request, GrowCoffee $growCoffee): void
     {
         //
     }
@@ -58,7 +59,7 @@ class GrowCoffeeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(GrowCoffee $growCoffee)
+    public function destroy(GrowCoffee $growCoffee): void
     {
         //
     }

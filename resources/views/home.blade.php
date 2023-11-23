@@ -21,6 +21,12 @@
 
                         {{ __('You are logged in!') }}
                     @endif
+
+                        @if(session('verification_message'))
+                        <div class="alert alert-info">
+                            {{ session('verification_message') }}
+                        </div>
+                        @endif
                 </div>
             </div>
         </div>

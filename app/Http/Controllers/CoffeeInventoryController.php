@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CoffeeInventory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class CoffeeInventoryController extends Controller
@@ -10,7 +11,7 @@ class CoffeeInventoryController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
         return view('Features.coffeeinventory');
     }
@@ -23,7 +24,7 @@ class CoffeeInventoryController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): void
     {
         //
     }
@@ -31,7 +32,7 @@ class CoffeeInventoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): void
     {
         //
     }
@@ -39,7 +40,7 @@ class CoffeeInventoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(CoffeeInventory $coffeeInventory)
+    public function show(CoffeeInventory $coffeeInventory): void
     {
         //
     }
@@ -47,7 +48,7 @@ class CoffeeInventoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(CoffeeInventory $coffeeInventory)
+    public function edit(CoffeeInventory $coffeeInventory): void
     {
         //
     }
@@ -55,7 +56,7 @@ class CoffeeInventoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, CoffeeInventory $coffeeInventory)
+    public function update(Request $request, CoffeeInventory $coffeeInventory): void
     {
         //
     }
@@ -63,7 +64,7 @@ class CoffeeInventoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CoffeeInventory $coffeeInventory)
+    public function destroy(CoffeeInventory $coffeeInventory): void
     {
         //
     }

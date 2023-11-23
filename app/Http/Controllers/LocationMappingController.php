@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\LocationMapping;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class LocationMappingController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
         return view('Features.locationmapping');
     }
@@ -18,7 +19,7 @@ class LocationMappingController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): void
     {
         //
     }
@@ -26,7 +27,7 @@ class LocationMappingController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): void
     {
         //
     }
@@ -34,7 +35,7 @@ class LocationMappingController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(LocationMapping $locationMapping)
+    public function show(LocationMapping $locationMapping): void
     {
         //
     }
@@ -42,7 +43,7 @@ class LocationMappingController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(LocationMapping $locationMapping)
+    public function edit(LocationMapping $locationMapping): void
     {
         //
     }
@@ -50,7 +51,7 @@ class LocationMappingController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, LocationMapping $locationMapping)
+    public function update(Request $request, LocationMapping $locationMapping): void
     {
         //
     }
@@ -58,7 +59,7 @@ class LocationMappingController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(LocationMapping $locationMapping)
+    public function destroy(LocationMapping $locationMapping): void
     {
         //
     }
